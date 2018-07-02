@@ -1,0 +1,7 @@
+*.log
+*.dvi
+*.aux
+*.loc
+*.toc
+lab.pdf
+*.swp
