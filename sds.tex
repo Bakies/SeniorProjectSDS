@@ -48,10 +48,14 @@ The video from the camera is streamed to the user's computer and passed through 
 Once the LED is found, the coordinates are sent to the whiteboard interface to display pen strokes.
 The whiteboard interface is projected and displayed on the user's computer, and makes up the user interface.
 \subsection{Image Recognition}
-\begin{figure}[ht!]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=.5]{classdiagram.png}
 \end{figure}
+\paragraph{}
+The Image Recognition part of Polyopticon is written in python and consists of two classes.
+The Whiteboard class locates the LED in an image using openCV and sends the coordinates to the whiteboard interface through a socket.
+The Border class stores information about the border of the drawable space, and conatins methods to determine if coordinates are within the border.
 
 
 % \newpage \section{References} \printbibliography[heading=none]
