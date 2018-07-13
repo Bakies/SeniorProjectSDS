@@ -31,24 +31,28 @@
 
 \section{Summary Of Proposal}
 \paragraph{}
-Polyopticon is a portable presentation tool that consists of a projector, camera, Raspberry pi, and an infrared LED drawing tool.
+Polyopticon is a portable presentation tool that consists of a projector, camera, Raspberry pi, and an infrared(IR) LED drawing tool.
 The camera, pointed at the projected surface, will capture the user's pen strokes with image recogintion of the IR LED.
 Originally the Raspberry pi was intended to project and handle all of the image processing, but after testing it was determined that the Raspberry pi could not handle such a demanding task.
 Instead of performing the image recognition on the Raspberry pi, the pi will stream the video to the user's computer to be processed.
 
 \section{Design}
-\subsection{Image Recognition}
-\subsubsection{Whiteboard}
+\subsection{Dataflow}
 \begin{figure}[ht!]
 \centering
-\includegraphics{whiteboard.png}
+\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{Dataflow.png}
+\end{figure}
+\paragraph{}
+The user can input data from the projected user interface via the IR LED and the camera, or from their personal computer where they can directly interact with the whiteboard interface.
+The video from the camera is streamed to the user's computer and passed through openCV frame by frame to search for the LED.  
+Once the LED is found, the coordinates are sent to the whiteboard interface to display pen strokes.
+The whiteboard interface is projected and displayed on the user's computer, and makes up the user interface.
+\subsection{Image Recognition}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=.5]{classdiagram.png}
 \end{figure}
 
-\subsubsection{Border}
-\begin{figure}[ht!]
-\centering
-\includegraphics{border.png}
-\end{figure}
 
 % \newpage \section{References} \printbibliography[heading=none]
 \end{document}
